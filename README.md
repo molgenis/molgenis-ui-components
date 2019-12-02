@@ -1,6 +1,12 @@
-# molgenis-ui-components
+# Molgenis ui components
 
-## Project setup
+## Components
+
+[ToastComponent](docs/ToastComponent.md)
+
+## Console commands
+
+### Project setup
 ```
 yarn install
 ```
