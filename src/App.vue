@@ -50,8 +50,7 @@
         <div class="card-body">
           <h5 class="card-title">Usage</h5>
           <div class="card-text"><pre><code>
-&lt;stub
-&gt;&lt;/stub&gt;
+&lt;stub&gt;&lt;/stub&gt;
           </code></pre>
             <p>Template to add more cards</p>
           </div>
