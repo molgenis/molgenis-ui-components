@@ -1,6 +1,6 @@
 module.exports = {
   test_settings: {
-    selenium: {
+    webdriver: {
       launch_url: 'http://ondemand.saucelabs.com:80',
       start_process: true,
       host: 'ondemand.saucelabs.com',

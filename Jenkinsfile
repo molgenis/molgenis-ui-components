@@ -29,9 +29,6 @@ pipeline {
             when {
                 changeRequest()
             }
-            environment {
-                VUE_NIGHTWATCH_USE_SELENIUM = '1'
-            }
             steps {
                 container('node') {
                     sh "yarn install"
@@ -54,9 +51,6 @@ pipeline {
                 not {
                     changelog '.*\\[skip ci\\]$'
                 }
-            }
-            environment {
-                VUE_NIGHTWATCH_USE_SELENIUM = '1'
             }
             steps {
                 milestone 1
