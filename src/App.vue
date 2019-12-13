@@ -65,7 +65,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import ToastComponent from './components/ToastComponent.vue'
 
