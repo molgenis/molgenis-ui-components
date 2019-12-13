@@ -29,12 +29,15 @@ pipeline {
             when {
                 changeRequest()
             }
+            environment {
+                VUE_NIGHTWATCH_USE_SELENIUM = '1'
+            }
             steps {
                 container('node') {
                     sh "yarn install"
                     sh "yarn lint"
                     sh "yarn test:unit"
-                    sh "yarn test:e2e --url 'http://ondemand.saucelabs.com:80/' --env chrome,firefox"
+                    sh "yarn test:e2e --env chrome,firefox"
                 }
             }
             post {
@@ -52,12 +55,15 @@ pipeline {
                     changelog '.*\\[skip ci\\]$'
                 }
             }
+            environment {
+                VUE_NIGHTWATCH_USE_SELENIUM = '1'
+            }
             steps {
                 milestone 1
                 container('node') {
                     sh "yarn install"
                     sh "yarn test:unit"
-                    sh "yarn test:e2e --url 'http://ondemand.saucelabs.com:80/' --env chrome,firefox"
+                    sh "yarn test:e2e --env chrome,firefox"
                     sh "yarn build"
                 }
             }
