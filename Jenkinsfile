@@ -37,7 +37,7 @@ pipeline {
                     sh "yarn install"
                     sh "yarn lint"
                     sh "yarn test:unit"
-                    sh "yarn test:e2e --env chrome,firefox"
+                    sh "yarn test:e2e --url 'http://ondemand.saucelabs.com:80/' --env chrome,firefox"
                 }
             }
             post {
@@ -63,7 +63,7 @@ pipeline {
                 container('node') {
                     sh "yarn install"
                     sh "yarn test:unit"
-                    sh "yarn test:e2e --env chrome,firefox"
+                    sh "yarn test:e2e --url 'http://ondemand.saucelabs.com:80/' --env chrome,firefox"
                     sh "yarn build"
                 }
             }
