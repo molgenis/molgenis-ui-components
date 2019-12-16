@@ -36,10 +36,10 @@
             <toast-component
               v-show="isAutoHideToastShown"
               class="m-3"
-              message="This will hide in about 5 seconds"
+              message="This will hide in about 6 seconds"
               type="info"
               :autoHideOnType="['info', 'succes']"
-              :autoHideTime="5000"
+              :autoHideTime="6000"
               @toastCloseBtnClicked="isAutoHideToastShown = false"></toast-component>
           </div>
         </div>
