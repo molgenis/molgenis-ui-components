@@ -17,13 +17,11 @@ module.exports = {
         port: 80
       },
 
-      // More info on configuring capabilities can be found on:
-      // https://www.browserstack.com/automate/capabilities?tag=selenium-4
       desiredCapabilities: {
         'saucelabs:options': {
           local: 'false',
-          userName: process.env.SAUCE_CRED_USR,
-          accessKey: process.env.SAUCE_CRED_PWD
+          username: process.env.SAUCE_CRED_USR,
+          access_key: process.env.SAUCE_CRED_PWD
         }
       }
     },
