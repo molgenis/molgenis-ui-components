@@ -31,6 +31,20 @@ yarn test:unit
 yarn test:e2e
 ```
 
+When you want to run saucelabs locally please download the proxy client from: https://wiki.saucelabs.com/display/DOCS/Sauce+Connect+Proxy+Version+4.5.0
+
+Then run the deamon and keep it alive:
+
+```
+(nohup) sc -u username -k key &
+```
+
+In another or the same terminal you can execute the tests:
+
+```
+yarn test:e2e --env 'saucelabs.chrome'
+```
+
 ### Lints and fixes files
 ```
 yarn lint

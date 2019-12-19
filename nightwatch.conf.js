@@ -14,24 +14,21 @@ module.exports = {
       selenium: {
         host: 'ondemand.saucelabs.com',
         launch_url: 'http://ondemand.saucelabs.com:80',
-        port: 80
+        port: 80,
+        username: process.env.SAUCE_CRED_USR,
+        access_key: process.env.SAUCE_CRED_PWD
       },
 
       desiredCapabilities: {
-        'saucelabs:options': {
-          local: 'false',
-          username: process.env.SAUCE_CRED_USR,
-          access_key: process.env.SAUCE_CRED_PWD
-        }
+        name: packageJson.name,
+        build: buildName,
+        'tunnel-identifier': '3bb1e14d552b4ad1badff7755e94edf8'
       }
     },
 
     'saucelabs.chrome': {
       extends: 'saucelabs',
       desiredCapabilities: {
-        name: packageJson.name,
-        build: buildName,
-        'tunnel-identifier': process.env.TUNNEL_IDENTIFIER,
         browserName: 'chrome',
         chromeOptions: {
           w3c: false
