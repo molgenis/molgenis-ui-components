@@ -1,14 +1,32 @@
 <template>
   <transition name="slide">
-    <div v-if="value && value.length > 0" class="card d-block" :class="`${fixed ? 'fixed' : ''} text-${activeMessage.textType} bg-${activeMessage.type}`">
+    <div
+      v-if="value && value.length > 0"
+      class="card d-block"
+      :class="`${fixed ? 'fixed' : ''} text-${activeMessage.textType} bg-${activeMessage.type}`"
+    >
       <div v-if="activeMessage.title" class="card-header py-1 px-2">
         <strong>{{activeMessage.title}}</strong>
-        <button type="button" class="close" :class="`text-${activeMessage.textType}`" @click="dequeue">
+        <button
+          type="button"
+          class="close"
+          :class="`text-${activeMessage.textType}`"
+          @click="dequeue"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="card-body py-1 px-2">
-        <p class="card-text">{{activeMessage.message}}</p>
+        <button
+          v-if="!activeMessage.title"
+          type="button"
+          class="close"
+          :class="`text-${activeMessage.textType}`"
+          @click="dequeue"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="card-text pull-right">{{activeMessage.message}}</p>
       </div>
     </div>
   </transition>
@@ -20,7 +38,8 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'ToastComponent',
   props: {
-    value: { // [ {type, textType, title, message, timeout} ]
+    value: {
+      // [ {type, textType, title, message, timeout} ]
       type: Array,
       required: true
     },
@@ -28,6 +47,11 @@ export default Vue.extend({
       type: Boolean,
       required: false,
       default: () => true
+    }
+  },
+  data: function () {
+    return {
+      timer: 0
     }
   },
   mounted () {
@@ -40,6 +64,7 @@ export default Vue.extend({
   },
   methods: {
     onActivate () {
+      clearTimeout(this.timer)
       if (this.activeMessage) {
         if (!this.activeMessage.type) {
           this.activeMessage.type = 'light'
@@ -48,14 +73,19 @@ export default Vue.extend({
           this.activeMessage.textType = 'dark'
         }
         if (this.activeMessage.timeout && this.activeMessage.timeout > 0) {
-          setTimeout(this.dequeue, this.activeMessage.timeout)
+          this.timer = setTimeout(this.dequeue, this.activeMessage.timeout)
         }
       }
     },
     dequeue () {
-      clearTimeout(this.dequeue)
+      clearTimeout(this.timer)
       this.value.shift()
       this.$emit('input', this.value)
+      this.onActivate()
+    }
+  },
+  watch: {
+    value (val) {
       this.onActivate()
     }
   }
@@ -63,34 +93,38 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss" >
-  .close {
-    text-shadow: none;
-    &:focus, &:active {
-      outline: none;
-    }
+.close {
+  text-shadow: none;
+  &:focus,
+  &:active {
+    outline: none;
   }
-  .card {
-    width: auto;
-    &.fixed{
-      position: fixed;
-      bottom: 0rem;
-      left: 4rem;
-      right: 4rem;
-    }
+}
+.card {
+  width: auto;
+  &.fixed {
+    position: fixed;
+    bottom: 1rem;
+    left: 4rem;
+    right: 4rem;
   }
-  .card-header{
-    background-color: rgba(0,0,0,.15);
-  }
-  .slide-enter-active, .slide-leave-active {
-    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
-    opacity: 1;
-  }
-  .slide-enter, .slide-leave-to {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  .slide-enter-to, .slide-leave {
-    transform: translateY(0);
-    opacity: 1;
-  }
+}
+.card-header {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+  opacity: 1;
+}
+.slide-enter,
+.slide-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.slide-enter-to,
+.slide-leave {
+  transform: translateY(0);
+  opacity: 1;
+}
 </style>
