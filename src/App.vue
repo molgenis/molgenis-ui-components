@@ -28,19 +28,8 @@
           <div class="card-text">
             <button type="button" @click="isToastShown = !isToastShown">Toggle toast</button>
             <toast-component
-              v-show="isToastShown"
-              class="m-3"
-              message="Message from toast"
-              type="warning"
-              @toastCloseBtnClicked="isToastShown = false"></toast-component>
-            <toast-component
-              v-show="isAutoHideToastShown"
-              class="m-3"
-              message="This will hide in about 6 seconds"
-              type="info"
-              :autoHideOnType="['info', 'succes']"
-              :autoHideTime="6000"
-              @toastCloseBtnClicked="isAutoHideToastShown = false"></toast-component>
+              v-model="messages"
+            ></toast-component>
           </div>
         </div>
       </div>
@@ -67,17 +56,17 @@
 
 <script>
 import Vue from 'vue'
-import ToastComponent from './components/ToastComponent.vue'
+// import { ToastComponent } from './components/'
 
 export default Vue.extend({
   name: 'app',
-  components: {
-    ToastComponent
-  },
   data: () => {
     return {
-      isToastShown: true,
-      isAutoHideToastShown: true
+      messages: [
+        { type: 'success', textType: 'light', title: 'Success', message: 'De wereld is helemaal mooi man', timeout: 2000 },
+        { title: 'Info', message: 'hello world', timeout: 2000 },
+        { type: 'danger', textType: 'light', title: 'Danger', message: 'Alles is helemaal kapot man' }
+      ]
     }
   }
 })
