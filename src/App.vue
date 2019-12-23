@@ -11,25 +11,14 @@
               <h5 class="card-title">Usage</h5>
               <div class="card-text">
                 <pre><code>
-&lt;toast-component
-  v-show="showOrHideBoolean"
-  message="This is a toast"
-  type="info"
-  :autoHideOnType="['info', 'succes']"
-  :autoHideTime="5000"
-  @toastCloseBtnClicked="isAutoHideToastShown = false"
-&gt;&lt;/toast-component&gt;
+&lt;toast-component v-model="messages"&gt;&lt;/toast-component&gt;
             </code></pre>
                 <p>
-                  message: Text to show
-                  <br />type: bootstrap 4 type
-                  <br />autoHideOnType: Hide the toast automatically if selected type is in array
-                  <br />autoHideTime: Auto hide time in msec, defaults to 10 seconds
-                  <br />toastCloseBtnClicked: close event handler
+                  messages: Array of messages to show
                 </p>
+                <toast-component v-model="messages" :fixed="fixed"></toast-component>
               </div>
             </div>
-           <toast-component v-model="messages" :fixed="fixed"></toast-component>
           </div>
         </div>
         <div class="col">
