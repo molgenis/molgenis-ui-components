@@ -56,7 +56,6 @@
 
 <script>
 import Vue from 'vue'
-// import { ToastComponent } from './components/'
 
 export default Vue.extend({
   name: 'app',
