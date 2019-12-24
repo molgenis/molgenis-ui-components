@@ -1,6 +1,4 @@
 <template>
-  <div id="app">
-    <h1>Molgenis ui components</h1>
     <div class="container-fluid">
       <div class="row">
         <div class="col-2">Menu placeholder</div>
@@ -67,7 +65,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -147,12 +144,5 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  padding: 2rem 1rem;
-}
+<style lang="scss" scoped>
 </style>

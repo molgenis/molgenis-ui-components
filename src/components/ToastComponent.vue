@@ -104,6 +104,7 @@ export default Vue.extend({
   width: auto;
   &.fixed {
     position: fixed;
+    z-index: 1030; // fixed position Bootstrap variable
     bottom: 1rem;
     left: 4rem;
     right: 4rem;
