@@ -1,7 +1,7 @@
 import { ToastComponent } from './'
 
 const ComponentsPlugin = {
-  install (Vue, options) {
+  install (Vue) {
     Vue.component('ToastComponent', ToastComponent)
   }
 }
