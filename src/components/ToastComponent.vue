@@ -55,7 +55,6 @@ export default Vue.extend({
     }
   },
   mounted () {
-    console.log('hi')
     this.onActivate()
   },
   computed: {

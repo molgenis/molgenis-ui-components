@@ -31,7 +31,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx", "src/components/index.js"
+    "tests/**/*.tsx", "src/components/index.js", "src/components/ComponentsPlugin.js"
   ],
   "exclude": [
     "node_modules"
