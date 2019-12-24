@@ -1,12 +1,19 @@
 <template>
   <div id="app">
-    <div id="header" class="shadow-sm bg-secondary text-white">
+    <div id="header" class="shadow-sm bg-primary text-white p-0">
       <h1 class="m-0 px-3 py-2">Molgenis UI Component Library</h1>
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-2 menu-col shadow-sm">
-          <router-link class="btn btn-info" to="/toast">Toast component</router-link>
+        <div class="col-2 menu-col">
+          <router-link class="btn btn-secondary" to="/">
+            Home
+            <i class="fas fa-caret-right"></i>
+          </router-link>
+          <router-link class="btn btn-secondary" to="/toast">
+            Toast component
+            <i class="fas fa-caret-right"></i>
+          </router-link>
         </div>
         <div class="col m-0 p-0">
           <div class="mt-3">
@@ -34,13 +41,38 @@ export default Vue.extend({
 }
 
 #header {
-  height: 3.75rem;
+  height: 4rem;
+
+  h1 {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
 }
 
 .menu-col {
-  margin-top:0.9375rem;
-  border-top-right-radius: 0.25rem;;
-  height: calc(100vh - 4.6875rem);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top-right-radius: 0.25rem;
+  border-top: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  height: calc(100vh - 5rem);
   width: 4rem;
+  text-align: center;
+
+  a {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: left;
+    .fas {
+      float: right;
+      font-size: 1.5rem;
+      visibility: hidden;
+    }
+  }
+
+  .router-link-exact-active {
+    .fas {
+      visibility: visible;
+    }
+  }
 }
 </style>
