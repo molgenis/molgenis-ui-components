@@ -27,7 +27,8 @@
     type: 'danger',
     textType: 'light',
     title: 'Fixed toast',
-    message: "I'm a fixed toast"
+    message: 'I'm a fixed toast'
+    fixed: 'True/False'
   }
           </code></pre>
               <ul>
@@ -44,7 +45,10 @@
                   <i>(optional)</i>
                 </li>
                 <li>
-                  <b>message:</b> (optional) set to false to display inline
+                  <b>message:</b> (mandatory) text to display
+                </li>
+                <li>
+                  <b>fixed:</b> (optional) set to false to display inline
                 </li>
               </ul>
             </div>

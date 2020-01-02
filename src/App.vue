@@ -8,11 +8,11 @@
         <div class="col-2 menu-col">
           <router-link class="btn btn-secondary" to="/">
             Home
-            <i class="fas fa-caret-right"></i>
+            <font-awesome-icon icon="caret-right" />
           </router-link>
           <router-link class="btn btn-secondary" to="/toast">
             Toast component
-            <i class="fas fa-caret-right"></i>
+            <font-awesome-icon icon="caret-right" />
           </router-link>
         </div>
         <div class="col m-0 p-0">
@@ -27,9 +27,17 @@
 
 <script>
 import Vue from 'vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faCaretRight)
 
 export default Vue.extend({
-  name: 'app'
+  name: 'app',
+  components: {
+    FontAwesomeIcon
+  }
 })
 </script>
 
@@ -62,7 +70,7 @@ export default Vue.extend({
     width: 100%;
     margin-bottom: 1rem;
     text-align: left;
-    .fas {
+    svg {
       float: right;
       font-size: 1.5rem;
       visibility: hidden;
@@ -70,7 +78,7 @@ export default Vue.extend({
   }
 
   .router-link-exact-active {
-    .fas {
+    svg {
       visibility: visible;
     }
   }
