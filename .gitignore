@@ -7,6 +7,9 @@ selenium-debug.log
 chromedriver.log
 geckodriver.log
 
+# code cov
+/coverage/
+
 # local env files
 .env.local
 .env.*.local

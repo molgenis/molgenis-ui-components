@@ -1,22 +1,29 @@
 import { shallowMount } from '@vue/test-utils'
 import ToastComponent from '@/components/ToastComponent.vue'
+import Vue from 'vue'
 
 describe('ToastComponent.vue', () => {
   it('shows information', () => {
-    const wrapper = shallowMount(ToastComponent, { propsData: { type: 'warning', message: 'test' } })
+    const wrapper = shallowMount(ToastComponent, { propsData: { value: [{ message: 'message', title: 'title', type: 'info' }] } })
     expect(wrapper.exists()).toBeTruthy()
-    expect(wrapper.find('#message-span').text()).toBe('test')
-    expect(wrapper.find('#alert-message').classes()).toContain('alert-warning')
+    expect(wrapper.find('.card-header strong').text()).toBe('title')
+    expect(wrapper.find('.card-text').text()).toBe('message')
+    expect(wrapper.find('.card').classes()).toContain('bg-info')
   })
-})
 
-describe('ToastComponent.vue', () => {
   it('can hide after some set time', (done) => {
-    const wrapper = shallowMount(ToastComponent, { propsData: { type: 'warning', message: 'time test', autoHideOnType: ['warning'], autoHideTime: 10 } })
-    expect(wrapper.emitted().toastCloseBtnClicked).not.toBeDefined()
+    const wrapper = shallowMount(ToastComponent, { propsData: { value: [{ message: 'message', title: 'title', type: 'info', timeout: 10 }] } })
+    expect(wrapper.emitted()).toEqual({})
     setTimeout(() => {
-      expect(wrapper.emitted().toastCloseBtnClicked).toBeDefined()
+      expect(wrapper.emitted().input).toEqual([[[]]])
       done()
     }, 15)
+  })
+
+  it('listens to property changes', () => {
+    const wrapper = shallowMount(ToastComponent, { propsData: { value: [{ message: 'message', title: 'title' }] } })
+    expect(wrapper.find('.card-text').text()).toBe('message')
+    wrapper.setProps({ value: [{ message: 'changed', title: 'title', type: 'info' }] })
+    expect(wrapper.find('.card-text').text()).toBe('changed')
   })
 })
