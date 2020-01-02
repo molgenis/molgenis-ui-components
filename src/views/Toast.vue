@@ -17,7 +17,7 @@
                   <b>messages:</b> Array of messages to show
                 </li>
                 <li>
-                  <b>fixed:</b>set to false to display inline
+                  <b>fixed:</b> Set to false to display inline
                   <i>default: true (optional)</i>
                 </li>
               </ul>
@@ -28,7 +28,7 @@
     textType: 'light',
     title: 'Fixed toast',
     message: 'I'm a fixed toast'
-    fixed: 'True/False'
+    timeout: 2000
   }
           </code></pre>
               <ul>
@@ -45,10 +45,10 @@
                   <i>(optional)</i>
                 </li>
                 <li>
-                  <b>message:</b> (mandatory) text to display
+                  <b>message:</b> Text to display (mandatory)
                 </li>
                 <li>
-                  <b>fixed:</b> (optional) set to false to display inline
+                  <b>timeout:</b> If set, toast is auto hidden after timeout time in msec (optional)
                 </li>
               </ul>
             </div>
