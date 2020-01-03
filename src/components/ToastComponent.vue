@@ -5,7 +5,7 @@
       class="card d-block"
       :class="`${fixed ? 'fixed' : ''} text-${activeMessage.textType} bg-${activeMessage.type}`"
     >
-      <div v-if="activeMessage.title" class="card-header py-1 px-2">
+      <div v-if="activeMessage.title" class="card-header py-1 px-3">
         <strong>{{activeMessage.title}}</strong>
         <button
           type="button"
@@ -16,7 +16,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="card-body py-1 px-2">
+      <div class="card-body py-2 px-3">
         <button
           v-if="!activeMessage.title"
           type="button"
@@ -105,7 +105,7 @@ export default Vue.extend({
   &.fixed {
     position: fixed;
     z-index: 1030; // fixed position Bootstrap variable
-    bottom: 1rem;
+    bottom: 4rem;
     left: 4rem;
     right: 4rem;
   }
@@ -120,7 +120,7 @@ export default Vue.extend({
 }
 .slide-enter,
 .slide-leave-to {
-  transform: translateY(-100%);
+  transform: translateY(100%);
   opacity: 0;
 }
 .slide-enter-to,
