@@ -1,3 +1,20 @@
+# [1.2.0](https://github.com/molgenis/molgenis-ui-components/compare/v1.1.1...v1.2.0) (2020-01-02)
+
+
+### Bug Fixes
+
+* better inline toast position ([5503c70](https://github.com/molgenis/molgenis-ui-components/commit/5503c708ea03180f8f3639ffecdcf9bba162b18d))
+* fixed documentation ([e95a491](https://github.com/molgenis/molgenis-ui-components/commit/e95a4911ffd7b011cb1f3fb2803a65fe3dd03ff6))
+* removed unnecessary code ([8ae9583](https://github.com/molgenis/molgenis-ui-components/commit/8ae958376e5a81a8f61746d0fe48b57e8ba16e3c))
+
+
+### Features
+
+* Added router and basic menu structure ([1084fb1](https://github.com/molgenis/molgenis-ui-components/commit/1084fb13b3b08d35c4f76702bc0199d099ca0749))
+* added styling and demo's ([3ac2ab3](https://github.com/molgenis/molgenis-ui-components/commit/3ac2ab39d1493f1acfe3669fcdf233fbdfc173bd))
+* better toast ([fcb0ae7](https://github.com/molgenis/molgenis-ui-components/commit/fcb0ae735571b717932d6439de29a46149e73d45))
+* **icons:** added fontawesome icons, minor styling fixes ([2b1fa7b](https://github.com/molgenis/molgenis-ui-components/commit/2b1fa7b18a9e5817fce558669cc11426cd82b7e0))
+
 ## [1.1.1](https://github.com/molgenis/molgenis-ui-components/compare/v1.1.0...v1.1.1) (2019-12-16)
 
 
