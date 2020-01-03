@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/molgenis/molgenis-ui-components/compare/v1.2.0...v1.3.0) (2020-01-03)
+
+
+### Features
+
+* restyled the component ([551ca75](https://github.com/molgenis/molgenis-ui-components/commit/551ca75672ad73fed8286a9c9ab49663f1f39a72))
+
 # [1.2.0](https://github.com/molgenis/molgenis-ui-components/compare/v1.1.1...v1.2.0) (2020-01-02)
 
 
