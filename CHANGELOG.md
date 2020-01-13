@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/molgenis/molgenis-ui-components/compare/v1.3.0...v1.4.0) (2020-01-13)
+
+
+### Features
+
+* inline toasts use the bootstrap alert class ([950167c](https://github.com/molgenis/molgenis-ui-components/commit/950167ccf49e66237f117f880f1ce93fda111831))
+
 # [1.3.0](https://github.com/molgenis/molgenis-ui-components/compare/v1.2.0...v1.3.0) (2020-01-03)
 
 
