@@ -144,7 +144,7 @@ export default Vue.extend({
       this.messages = [
         {
           type: 'warning',
-          textType: 'light',
+          textType: 'dark',
           title: 'Warning!',
           message: "I'm a warning message"
         },
@@ -160,7 +160,6 @@ export default Vue.extend({
       this.messages = [
         {
           type: 'secondary',
-          textType: 'light',
           title: 'Fixed toast',
           message: "I'm a fixed toast"
         }

@@ -3,7 +3,7 @@
     <div
       v-if="value && value.length > 0"
       class="card d-block"
-      :class="`${fixed ? 'fixed' : ''} text-${activeMessage.textType} bg-${activeMessage.type}`"
+      :class="`${fixed ? 'fixed' : ''} text-${activeMessage.textType} ${fixed ? 'bg':'alert'}-${activeMessage.type}`"
     >
       <div v-if="activeMessage.title" class="card-header py-1 px-3">
         <strong>{{activeMessage.title}}</strong>
